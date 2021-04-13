@@ -98,10 +98,6 @@ namespace GradeBook.Test
             book1.Name=name;
         }
 
-
-
-
-
         [Fact]
         public void CanSetNameFromReferance()
         {
