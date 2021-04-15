@@ -16,14 +16,13 @@ namespace ACM.BLTest
                 LastName = "Shrotri"
             };
 
-            string expected = "Bhavana, Shrotri";
+            string expected = "Shrotri, Bhavana";
             string actual = customer.FullName;
             Assert.AreEqual(expected,actual);
         }
     }
 
-
-    [TestClass]
+[TestClass]
     public class FullNameFirstNameEmpty
     {
         [TestMethod]
@@ -74,6 +73,20 @@ namespace ACM.BLTest
 
             Assert.AreEqual(3, Customer.InstantCount);
 
+        }
+
+        [TestMethod]
+        public void ValidateValid()
+        {
+            var customer = new Customer
+            {
+                LastName = "Shrotri",
+                EmailAddress = "bhavana@gmail.com"
+            };
+
+            var expected = true;
+            var actual = customer.Validate();
+            Assert.AreEqual(expected, actual);
         }
 
 
