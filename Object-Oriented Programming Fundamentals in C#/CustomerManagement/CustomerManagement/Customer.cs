@@ -16,7 +16,11 @@ namespace CustomerManagement
         public Customer(int custId)
         {
             CustomerID = custId;
+
+            AddressList = new List<Address>();
         }
+
+        public List<Address> AddressList { get; set; }
         public int CustomerID { get; private set; }
         public string EmailAddress { get; set; }
         public string FirstName { get; set;}
@@ -52,8 +56,6 @@ namespace CustomerManagement
                 return fullname;
             }
         }
-
-
 
         public bool Validate()
         {

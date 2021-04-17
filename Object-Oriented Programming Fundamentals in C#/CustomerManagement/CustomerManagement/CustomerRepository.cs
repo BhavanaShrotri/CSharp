@@ -22,7 +22,7 @@ namespace CustomerManagement
                 customer.EmailAddress = "bhavana@gmail.com";
                 customer.FirstName = "Bhavana";
                 customer.LastName = "Shrotri";
-                customer.AdressList = addressRepository.RetriveByCustomerId(custId).ToList();
+                customer.AddressList = addressRepository.RetriveByCustomerId(custId).ToList();
             }
 
             return customer;
