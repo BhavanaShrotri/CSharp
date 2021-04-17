@@ -49,8 +49,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrderRepoTest.cs" />
+    <Compile Include="ProductRepoTest.cs" />
     <Compile Include="CustomerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomerRepoTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

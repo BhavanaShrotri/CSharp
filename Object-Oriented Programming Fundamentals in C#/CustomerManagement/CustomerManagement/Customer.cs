@@ -9,10 +9,31 @@ namespace CustomerManagement
     
     public class Customer
     {
+        public Customer()
+        {
+            
+        }
+        public Customer(int custId)
+        {
+            CustomerID = custId;
+        }
         public int CustomerID { get; private set; }
         public string EmailAddress { get; set; }
         public string FirstName { get; set;}
+        public static int InstantCount { get; set; }
         private string _lastName;
+
+        public string LastName
+        {
+            get
+            {
+                return _lastName;
+            }
+            set
+            {
+                _lastName = value;
+            }
+        }
 
         public string FullName
         {
@@ -32,35 +53,7 @@ namespace CustomerManagement
             }
         }
 
-        public static int InstantCount { get; set; }
 
-        public string LastName
-        {
-            get
-            {
-                return _lastName;
-            }
-            set
-            {
-                _lastName = value;
-            }
-        }
-
-        public Customer Retrive(int CustomerID)
-        {
-            return new Customer();
-        }
-
-        public List<Customer> Retrive()
-        {
-            return new List<Customer>();
-        }
-
-        public bool Save()
-        {
-
-            return true;
-        }
 
         public bool Validate()
         {
