@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CustomerManagement
 {
     
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
         public Product()
         {
@@ -35,7 +35,19 @@ namespace CustomerManagement
             }
         }
 
-        
+
+        public string Log()
+        {
+            var logString = ProductId + " : " + " " +
+                        ProductName + " " +
+                       ProductDescription + " " +
+                       "Status : " + EntityState.ToString(); 
+                     
+
+            return logString;
+        }
+
+
 
         public override string ToString() => ProductName;
 

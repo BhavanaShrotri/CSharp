@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Acme.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace CustomerManagement
 {
     
-    public class Order
+    public class Order : EntityBase, ILoggable
     {
         public Order():this(0)
         {
@@ -25,9 +26,14 @@ namespace CustomerManagement
         public List<OrderItem> OrderItems { get; set; }
         public int ShippingAddressId { get; set; }
 
+        public string Log()
+        {
+            throw new NotImplementedException();
+        }
+
         public override string ToString() => $"{OrderDate.Value.Date}({OrderId})";
 
-        public bool Validate()
+        public override bool Validate()
         {
             var isvalid = true;
 

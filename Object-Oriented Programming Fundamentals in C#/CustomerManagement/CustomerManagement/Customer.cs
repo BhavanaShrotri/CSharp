@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Acme.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace CustomerManagement
 {
     
-    public class Customer
+    public class Customer : EntityBase, ILoggable
     {
         public Customer()
         {
@@ -62,7 +63,18 @@ namespace CustomerManagement
             }
         }
 
-        public bool Validate()
+        public string Log()
+        {
+            var logString = CustomerID + " : " +
+                       FullName + " " +
+                       "Email : " + EmailAddress +
+                       " " +
+                       "Status : " + EntityState.ToString();
+
+            return logString;
+        }
+
+        public override bool Validate()
         {
             var isvalid = true;
 
