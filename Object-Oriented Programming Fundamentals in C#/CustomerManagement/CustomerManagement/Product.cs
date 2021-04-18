@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CustomerManagement
 {
     
-    public class Product
+    public class Product : EntityBase
     {
         public Product()
         {
@@ -22,7 +22,9 @@ namespace CustomerManagement
         public int ProductId { get; private set;}
         public string ProductName { get; set; }
 
-        public bool Validate()
+        public override string ToString() => ProductName;
+
+        public override bool Validate()
         {
             var isvalid = true;
 

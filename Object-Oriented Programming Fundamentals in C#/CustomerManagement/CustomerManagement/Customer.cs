@@ -25,7 +25,9 @@ namespace CustomerManagement
         public string EmailAddress { get; set; }
         public string FirstName { get; set;}
         public static int InstantCount { get; set; }
+        public int CustomerType { get; set; }
         private string _lastName;
+
 
         public string LastName
         {
@@ -38,6 +40,9 @@ namespace CustomerManagement
                 _lastName = value;
             }
         }
+
+        public override string ToString() => FullName;
+
 
         public string FullName
         {
