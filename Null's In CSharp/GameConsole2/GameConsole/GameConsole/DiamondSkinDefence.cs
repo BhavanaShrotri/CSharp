@@ -4,9 +4,9 @@ using System.Text;
 
 namespace GameConsole
 {
-    class DiamondSkinDefence : ISpecialDefence
+    class DiamondSkinDefence : SpecialDefence
     {
-        public int CalculateDamageReduction(int totalDamage)
+        public override int CalculateDamageReduction(int totalDamage)
         {
             return 1;
         }

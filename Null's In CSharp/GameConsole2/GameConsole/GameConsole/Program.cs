@@ -16,7 +16,7 @@ namespace GameConsole
                 Name = "Sana"
             };
 
-            PlayerCharacter hanna = new PlayerCharacter(new NullDefence())
+            PlayerCharacter hanna = new PlayerCharacter(SpecialDefence.Null)
             {
                 Name = "Hanna"
             };
