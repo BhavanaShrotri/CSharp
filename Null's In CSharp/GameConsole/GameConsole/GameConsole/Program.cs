@@ -9,21 +9,28 @@ namespace GameConsole
 
 
 
-            var player = new PlayerCharacter();
-            player.Name = "Bhavana";
-            player.DaysSinceLastLogin = 23;
+            //var player = new PlayerCharacter();
+            //player.Name = "Bhavana";
+            //player.DaysSinceLastLogin = 23;
 
-            PlayerDisplayer.Write(player);
+            //PlayerDisplayer.Write(player);
 
 
-            //PlayerCharacter[] player = new PlayerCharacter[3]
-            //{
-            //    new PlayerCharacter{Name = "Bhavana"},
-            //    new PlayerCharacter(),
-            //    null
-            //};
+            PlayerCharacter?[] players =
+            {
+                new PlayerCharacter("Bhavana"),
+                new PlayerCharacter( "Rachana"),
+                new PlayerCharacter(null), 
+                null
+            };
 
-            //Null conditional operator for array 
+
+            PlayerDisplayer.Write(players[0]);
+            PlayerDisplayer.Write(players[1]);
+            PlayerDisplayer.Write(players[2]);
+            PlayerDisplayer.Write(players[3]);
+
+            //Null conditional operator for array
             //PlayerCharacter[] player = null;
 
             //string p1 = player?[0]?.Name;
