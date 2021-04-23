@@ -28,22 +28,30 @@ namespace ConsoleCalculator
                 int result = calculator.Calculate(number1, number2, operation);
                 DisplayResult(result);
             }
-            catch(ArgumentNullException ex) when (ex.ParamName =="operation")
+
+            
+            catch(CalculationException ex)
             {
-                Console.WriteLine($"Operation was not provided. {ex}");
-            }
-            catch (ArgumentNullException ex) 
-            {
-                Console.WriteLine($"An Argument was Null{ex}");
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                Console.WriteLine($"Operation was not provided. {ex}");
+                Console.WriteLine(ex);
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Sorry Somthing Went Wrong. {ex}");
-            } 
+            }
+
+            //catch(ArgumentNullException ex) when (ex.ParamName =="operation")
+            //{
+            //    Console.WriteLine($"Operation was not provided. {ex}");
+            //}
+            //catch (ArgumentNullException ex) 
+            //{
+            //    Console.WriteLine($"An Argument was Null{ex}");
+            //}
+            //catch (ArgumentOutOfRangeException ex)
+            //{
+            //    Console.WriteLine($"Operation was not provided. {ex}");
+            //}
+
             finally
             {
                 Console.WriteLine("....Finally.....");
