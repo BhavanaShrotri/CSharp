@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleCalculator
 {
-    class Calculator
+    public class Calculator
     {
         public int Calculate(int number1, int number2, string operation)
         {
