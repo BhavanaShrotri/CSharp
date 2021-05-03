@@ -2,9 +2,9 @@
 
 namespace DelegatesAndEvents
 {
-    class Program
+    public delegate int BizRulesDelegate(int x, int y);
+    public class Program
     {
-        
         static void Main(string[] args)
         {
             //WorkPerformedHandler del1 = new WorkPerformedHandler(WorkPerformed1);
@@ -29,12 +29,29 @@ namespace DelegatesAndEvents
 
             // DoWork(del1);
 
+            //Anonymous Method 
+            //worker.workPerformed += delegate (object sender, WorkPerformedEventArgs e)
+            //{
+            //    Console.WriteLine("Hours Worked : " + e.Hours + " " + e.WorkType);
+            //};
+
+
+            BizRulesDelegate addDel = (x, y) => x + y;
+            BizRulesDelegate mulDel = (x, y) => x * y;
+            var data = new ProcessData();
+            data.Process(2, 3, addDel);
+
+
+
+
             var worker = new Worker();
-            worker.workPerformed += delegate (object sender, WorkPerformedEventArgs e)
+
+            worker.workPerformed += (s,e) =>
             {
                 Console.WriteLine("Hours Worked : " + e.Hours + " " + e.WorkType);
-            };
-            worker.workCompleted += Work_WorkCompleted;
+                Console.WriteLine("Done");
+            } ;
+            worker.workCompleted += (s,e)=> Console.WriteLine("Work Completed....."); ;
            
            //worker.workCompleted -= Work_WorkCompleted;
             worker.DoWork(8,WorkType.GenerateReports);
@@ -50,10 +67,10 @@ namespace DelegatesAndEvents
         //    Console.WriteLine("Hours Worked : " + e.Hours + " " + e.WorkType);
         //}
 
-        static void Work_WorkCompleted(object sender, EventArgs e)
-        {
-            Console.WriteLine("Work Completed.....");
-        }
+        //static void Work_WorkCompleted(object sender, EventArgs e)
+        //{
+        //    Console.WriteLine("Work Completed.....");
+        //}
 
         //static void DoWork(WorkPerformedHandler del)
         //{
