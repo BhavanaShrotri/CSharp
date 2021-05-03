@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DelegatesAndEvents
 {
@@ -7,6 +9,25 @@ namespace DelegatesAndEvents
     {
         static void Main(string[] args)
         {
+
+            var custs = new List<Customer> 
+            {
+                 new Customer {ID =01, City ="Pune", FirstName ="Bhavana", LastName = "Shrotri"},
+                 new Customer { ID = 02, City = "Satara", FirstName = "Rachana", LastName = "Shrotri" },
+                 new Customer { ID = 03, City = "Kolhapur", FirstName = "Sagar", LastName = "Shinde" },
+                 new Customer { ID = 04, City = "Pune", FirstName = "Anjali", LastName = "Naik" },
+                 new Customer { ID = 05, City = "Nashik", FirstName = "Priyanka", LastName = "Desai" }
+            };
+
+            var PunCust = custs
+                .Where(c => c.City == "Pune")
+                .OrderBy(c => c.FirstName);
+
+            foreach (var cust in PunCust)
+            {
+                Console.WriteLine(cust.FirstName);
+            }
+
             //WorkPerformedHandler del1 = new WorkPerformedHandler(WorkPerformed1);
             //WorkPerformedHandler del2 = new WorkPerformedHandler(WorkPerformed2);
             //WorkPerformedHandler del3 = new WorkPerformedHandler(WorkPerformed3);
@@ -41,8 +62,15 @@ namespace DelegatesAndEvents
             var data = new ProcessData();
             data.Process(2, 3, addDel);
 
+            Action<int, int> myAction = (x, y) =>Console.WriteLine( x + y );
+            Action<int, int> myMulAction = (x, y) => Console.WriteLine(x * y);
+
+            data.ProcessAction(5, 5, myMulAction);
 
 
+            Func<int, int, int> funcAddDel = (x, y) => x + y;
+            Func<int, int, int> funcMulDel = (x, y) => x * y;
+            data.ProcessFunc(10, 5, funcMulDel);
 
             var worker = new Worker();
 
