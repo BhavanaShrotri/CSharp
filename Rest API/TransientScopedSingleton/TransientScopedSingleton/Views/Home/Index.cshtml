@@ -1,0 +1,48 @@
+﻿<div class="text-center">
+        
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Service Type</th>
+                <th>First Instance Operation ID</th>
+                <th>Second Instance Operation ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td>Transient</td>
+                
+                    <td>
+                            @ViewBag.transient1
+                       
+                    </td>
+                    <td>
+                            @ViewBag.transient2
+                    </td>
+            </tr>
+
+            <tr>
+                <td>Scoped</td>
+                <td>@ViewBag.scoped1</td>
+                <td>@ViewBag.scoped2</td>
+            </tr>
+
+    <tr>
+        <td>Singleton</td>
+           
+            <td>
+            
+                @ViewBag.singleton1
+            
+            </td>
+            <td>
+                
+                 @ViewBag.singleton2
+               
+            </td>
+    </tr>
+
+</tbody>
+
+</table>
